@@ -7,12 +7,12 @@ The Streamlit app provides a modern dark-themed UI, probability metrics, fuzzy m
 ---
 
 ## 🚀 Features
-- *Neural Layer*
+- **Neural Layer**
   - TF-IDF vectorizer  
   - Logistic Regression classifier  
-  - Produces probability p ∈ [0,1] for positive sentiment  
+  - Produces probability *p ∈ [0,1]* for positive sentiment  
 
-- *Fuzzy Logic Layer*
+- **Fuzzy Logic Layer**
   - Five triangular membership functions  
   - Categories:
     - Strong Negative  
@@ -22,7 +22,7 @@ The Streamlit app provides a modern dark-themed UI, probability metrics, fuzzy m
     - Strong Positive  
   - Max-membership decision + tie-break priority  
 
-- *Streamlit Web App*
+- **Streamlit Web App**
   - Premium dark UI  
   - Animated background  
   - Example text buttons  
@@ -32,45 +32,88 @@ The Streamlit app provides a modern dark-themed UI, probability metrics, fuzzy m
 ---
 
 ## 📂 Project Structure
-
+```
 
 .
 ├── app.py                  # Streamlit application
 ├── sentiment_model.pkl     # Saved Logistic Regression model
 ├── NFTSA.ipynb             # Training + fuzzy logic notebook
+├── data/                   # Dataset folder (download link below)
 ├── README.md
 
-`
+```
+
+---
+
+## 📦 Dataset Information
+
+This project uses the **IMDB Large Movie Review Dataset** created by Maas et al. (Stanford AI Lab), a widely used benchmark for sentiment analysis.
+
+### **Dataset Details**
+- 50,000 movie reviews  
+- Balanced dataset: 25k positive / 25k negative  
+- Pre-labeled for binary sentiment classification  
+- Used to train:
+  - TF-IDF vectorizer  
+  - Logistic Regression sentiment classifier  
+
+### **Why This Dataset?**
+- High-quality human-written reviews  
+- Strong polarity indicators  
+- Standard benchmark → reproducible performance  
+- Perfect for baseline ML + fuzzy logic hybrid systems  
+
+### **Download Link (Official Source)**
+The dataset is too large to store in GitHub (Git LFS not used here).  
+Download it manually from the official link:
+
+🔗 **IMDB Dataset:**  
+http://ai.stanford.edu/~amaas/data/sentiment/
+
+After downloading, place files in:
+
+```
+
+data/
+
+```
+
+Example:
+```
+
+data/IMDB Dataset.csv.zip
+
+````
 
 ---
 
 ## 🛠 Installation
 
 ### Clone Repo
-bash
-git clone https://github.com/YOUR_USERNAME/NeuroFuzzySentiment.git
-cd NeuroFuzzySentiment
-`
+```bash
+git clone https://github.com/sampathmagapu/Neuro-Fuzzy-Text-Sentiment-Analyzer.git
+cd Neuro-Fuzzy-Text-Sentiment-Analyzer
+````
 
 ### Install Dependencies
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 Or install manually:
 
-bash
+```bash
 pip install streamlit scikit-learn matplotlib numpy
-
+```
 
 ### Run App
 
-bash
+```bash
 streamlit run app.py
+```
 
-
-> Make sure sentiment_model.pkl is in the same folder.
+> Make sure `sentiment_model.pkl` is in the same folder.
 > If missing, run the training notebook to generate it.
 
 ---
@@ -99,14 +142,13 @@ Each outputs a membership μ ∈ [0,1].
 
 ### 3️⃣ Final Output
 
-* System selects class with *highest membership*
+* System selects class with **highest membership**
 * Returns:
 
   * Neural probability
   * Fuzzy label
   * Confidence
-  * Membership bars
-  * Visualizations
+  * Membership bars & visualizations
 
 ---
 
@@ -131,10 +173,12 @@ Each outputs a membership μ ∈ [0,1].
 
 ## 👤 Author
 
-*Sampath Magapu*
+**Sampath Magapu**
 
 ---
 
 ## 📄 License
 
 MIT License
+
+```
